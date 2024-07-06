@@ -1,0 +1,7 @@
+-->Se le dió finalización a la vida de los hilos para que no sigan buscando con qué trabajar después de haber cumplido su tarea.
+
+-->En la versión anterior todos los métodos de una misma clase, o casi todos, estaban sincronizados, lo cual frenaba todo ya que cuando un hilo tomaba el lock para un método x, todos los demás métodos quedaban bloqueados hasta que dicho hilo largara el lock. Ahora se utilizó sincronización en bloque para asegurar la concurrencia pero sin que resulte en condiciones de carrera. Por ejemplo: en la clase Listas se tienen métodos para acceder a cada uno de los registros. Con la configuración anterior, si un hilo accedía al registro de reservas pendientes, ningún otro método iba a poder acceder a cualquiera de las otros registros. Eso se arregló y ahora cada hilo puede trabajar con los registros de manera independiente. Antes se tenía un programa más bien secuencial. Ahora se tiene un programa que trabaja con concurrencia.
+ 
+--> Se agregaron los bloques par en los lugares correspondientes del diagrama de secuencias, asegurando que tanto los hilos como los procesos en ciertas zonas del código trabajan paralelamente. 
+
+--> Se agregaron las clases elementales ArrayList y Random así como también los métodos de la propia clase utilizados en el programa, para un correcto entendimiento a la hora de leer las relaciones entre las clases en el diagrama de clases.   
